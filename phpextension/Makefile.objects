@@ -1,0 +1,8 @@
+browserext.lo: /var/www/html/phpextension/browserext.cpp
+	$(LIBTOOL) --mode=compile $(CXX) -w -I. -I/var/www/html/phpextension $(COMMON_FLAGS) $(CXXFLAGS_CLEAN) $(EXTRA_CXXFLAGS)  -c /var/www/html/phpextension/browserext.cpp -o browserext.lo 
+$(phplibdir)/browserext.la: ./browserext.la
+	$(LIBTOOL) --mode=install cp ./browserext.la $(phplibdir)
+
+./browserext.la: $(shared_objects_browserext) $(BROWSEREXT_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_browserext) $(BROWSEREXT_SHARED_LIBADD)
+
