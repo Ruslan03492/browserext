@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  browserext:
+    build: .
+    ports:
+     - "8001:8080"
+    volumes:
+     - ./:/var/www/html
