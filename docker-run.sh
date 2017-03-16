@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
+chmod u+s 'which Xvfb'
+echo "Xvfb :0 > /dev/null 2>&1 &" >> /etc/rc.local
+echo "export DISPLAY=:0.0" >> /etc/apache2/envvars
 cd /var/www/html && ./build.sh && /install.sh
-echo "extension=browserext.so" >> /etc/php/5.6/apache2/php.ini
-echo "extension=browserext.so" >> /etc/php/7.1/cli/php.ini
-echo "export DOCUMENT_ROOT=html" >> /etc/apache2/envvars
-echo "export HOSTNAME=localhost" >> /etc/apache2/envvars
+echo "extension=browserext.so" >> /etc/php5/apache2/php.ini
 service apache2 restart

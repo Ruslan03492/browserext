@@ -1,4 +1,4 @@
 <?php
 $browser = new PhpBrowser();
-$browser->load('http://tiro.by');
+$browser->load('http://google.com');
 echo $browser->title();

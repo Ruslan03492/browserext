@@ -3,7 +3,9 @@ version: "2"
 services:
   browser:
     build: .
+#    image: technopreneural/docker-ubuntu-14.04-php5
     ports:
-     - "8000:8080"
+     - "8000:80"
     volumes:
      - ./:/var/www/html
+#    command:  docker-run.sh
