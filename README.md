@@ -1,2 +1,3 @@
 # browserext
-The docker container for browserext
+The docker container for browserext.
+
