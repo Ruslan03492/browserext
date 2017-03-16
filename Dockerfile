@@ -21,7 +21,7 @@ RUN apt-get -y install \
     xfonts-cyrillic
 
 RUN \
-#    echo "Xvfb :0 > /dev/null 2>&1 &" >> /etc/rc.local && \
+    echo "Xvfb :0 > /dev/null 2>&1 &" >> /etc/init.d/rc.local && \
     echo "export DISPLAY=:0.0" >> /etc/apache2/envvars && \
     git clone https://github.com/scraperlab/browserext.git /opt/browserext && \
     cd /opt/browserext && \
@@ -29,7 +29,6 @@ RUN \
     ./build.sh && \
     ./install.sh && \
     echo "extension=browserext.so" >> /etc/php5/apache2/php.ini && \
-    Xvfb :0 > /dev/null 2>&1 && \
     service apache2 restart
 
 EXPOSE 80

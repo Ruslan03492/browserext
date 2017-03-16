@@ -8,4 +8,4 @@ services:
      - "8000:80"
     volumes:
      - ./:/var/www/html
-#    command:  docker-run.sh
+#    command: "Xvfb :0"
