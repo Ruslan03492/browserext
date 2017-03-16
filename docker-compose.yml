@@ -2,7 +2,7 @@ version: "2"
 
 services:
   browser:
-    build: .
+    image: rutel/docker-browserext
     ports:
      - "8000:80"
     volumes:
