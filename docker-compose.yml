@@ -1,9 +1,0 @@
-version: "2"
-
-services:
-  browser:
-    image: rutel/docker-browserext
-    ports:
-     - "8000:80"
-    volumes:
-     - ./:/var/www/html
