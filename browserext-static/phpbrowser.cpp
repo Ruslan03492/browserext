@@ -92,11 +92,9 @@ int PhpBrowser::load(const char* url, bool samewnd, int timeout)
 	QNetworkRequest request;
     request.setUrl(qstrurl);
     request.setRawHeader("Referer", "http://velvet.by");
-   	request.setRawHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-	request.setRawHeader("Accept-Charset", "UTF-8,*;q=0.5");
 	request.setRawHeader("Accept-Language", "ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4");
 	request.setRawHeader("Connection", "keep-alive");
-	request.setRawHeader("User-Agent", "My mega browser v 1.0");
+	request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36");
 	if (!samewnd) newTab();
 	PhpWebView *view = getTab();
 	view->load(request);
